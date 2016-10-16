@@ -269,7 +269,33 @@ public class EthSrvActionSupport extends ActionSupport implements
 		return SUCCESS;
 
 	}
-
+	/**
+	  * @description modify the serviceName or BW
+	  * @return
+	  * @throws Exception
+	  */
+	 public String modifyTunnel() throws Exception{
+	     if(!serviceData.isModifyValid()){
+	      return "Invalid input parameter !";
+	     }
+	     boolean processResult = true;
+	     String operResult = "Modify service success !";
+	     try{
+	    	 System.out.println("service--->"+serviceData);
+	      ethServiceProc.modifyEthTunnel(getHttpAddr(), serviceData);
+	     }catch(TsdnException ex){
+	      processResult = false;
+	      operResult = "Modify service failed !";
+	      ex.printStackTrace();
+	     }
+	     boolean result = writeResultToResonpse(operResult);
+	     if(!result || !processResult){
+	      return ERROR;
+	     }
+	     ethServiceProc.setIsRecord(false);
+	     queryEthTunnelList(getHttpAddr());
+	     return SUCCESS;
+	    } 
 	public Date getTime() {
 
 		Calendar calendar = Calendar.getInstance();
@@ -307,6 +333,9 @@ public class EthSrvActionSupport extends ActionSupport implements
 			try {
 
 				while (rs.next()) {
+					Connection conn2 = DriverManager.getConnection(
+							"jdbc:mysql://localhost:3306/tsdn", "root", "828039");
+					Statement stmt2 = conn2.createStatement();
 					ServiceDataStruct serviceData1 = new ServiceDataStruct();
 					serviceData1.setServiceName(rs.getString("title"));
 					serviceData1.setIngress(Long.parseLong(rs
@@ -335,7 +364,9 @@ public class EthSrvActionSupport extends ActionSupport implements
 						}
 						else {
 							sql = "UPDATE calendar SET uuid = '"+uuid+"' WHERE id = "+rs.getInt("id");
-							stmt.executeUpdate(sql);
+							stmt2.executeUpdate(sql);
+							stmt2.close();
+							conn2.close();
 							
 						}
 					} catch (TsdnException ex) {
@@ -380,7 +411,9 @@ public class EthSrvActionSupport extends ActionSupport implements
 			}
 			try {
 				while (rs.next()) {
-
+					Connection conn2 = DriverManager.getConnection(
+							"jdbc:mysql://localhost:3306/tsdn", "root", "828039");
+					Statement stmt2 = conn2.createStatement();
 					uuid = rs.getString("uuid");
 					ethServiceProc.deleteEthTunnel(getHttpAddr(), uuid);
 					Calendar calendar = Calendar.getInstance();
@@ -388,7 +421,9 @@ public class EthSrvActionSupport extends ActionSupport implements
 					deleteTime = calendar.getTime();
 					System.out.println("endtimeCreateTrue----->" + deleteTime);
 					sql = "DELETE FROM calendar WHERE uuid = '"+uuid+"'";
-					stmt.executeUpdate(sql);
+					stmt2.executeUpdate(sql);
+					stmt2.close();
+					conn2.close();
 					// System.out.println("deleteUuid-->" + uuid);
 					// Object[] options = { "确定", "取消", "帮助" };
 					// int response = JOptionPane.showOptionDialog(null,

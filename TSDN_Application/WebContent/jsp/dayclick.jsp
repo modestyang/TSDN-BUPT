@@ -1,12 +1,18 @@
 <%@page import="java.util.Date"%>
 <%@page import="java.sql.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page
 	import="com.huawei.tsdn.sampleapp.util.GlobalResourceLoaderServlet"%>
 <%@page
 	import="com.huawei.tsdn.sampleapp.ethsrv.model.ServiceDataStruct"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
-	String http = GlobalResourceLoaderServlet.getServerAddress();
+String http = GlobalResourceLoaderServlet.getServerAddress();
+	Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.SECOND, 0); // 控制秒
+		Date time = calendar.getTime();
+		SimpleDateFormat ymdhm = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String timeString = ymdhm.format(time);
 %>
 
 <script language="javascript" type="text/javascript" src="/TSDN_Application/js/WdatePicker.js">  </script>
@@ -120,7 +126,7 @@ input[type="button"] {
 			</tr>
 			<tr>
 				<td>start</td>
-				<td><input id="start" type="text" /> <img
+				<td><input id="start" type="text" value="<%=timeString%>" /> <img
 					onclick="WdatePicker({el:'start',dateFmt:'yyyy-MM-dd HH:mm'})"
 					src="/TSDN_Application/js/skin/datePicker.gif" width="16"
 					height="22" align="absmiddle"></td>

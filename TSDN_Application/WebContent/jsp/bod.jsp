@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <%@page import="org.w3c.dom.Document"%>
-<%@page import="com.huawei.tsdn.sampleapp.util.GlobalResourceLoaderServlet" %>
+<%@page
+	import="com.huawei.tsdn.sampleapp.util.GlobalResourceLoaderServlet"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
-	String http = GlobalResourceLoaderServlet.getServerAddress(); 
+	String http = GlobalResourceLoaderServlet.getServerAddress();
 %>
 <html lang="en">
 
@@ -17,7 +18,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>T-SDN BoD</title>
-<script type="text/javascript" src="/TSDN_Application/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript"
+	src="/TSDN_Application/js/jquery-1.9.1.min.js"></script>
 <!-- jQuery -->
 <script src="/TSDN_Application/js/jquery.js"></script>
 
@@ -25,7 +27,8 @@
 <script src="/TSDN_Application/js/bootstrap.min.js"></script>
 
 <!-- Morris Charts JavaScript -->
-<script type="text/javascript" src="/TSDN_Application/js/jquery.fancybox.js?v=2.1.5"></script>
+<script type="text/javascript"
+	src="/TSDN_Application/js/jquery.fancybox.js?v=2.1.5"></script>
 <!-- Bootstrap Core CSS -->
 <link href="/TSDN_Application/css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,11 +39,12 @@
 <link href="/TSDN_Application/css/plugins/morris.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="/TSDN_Application/font-awesome/css/font-awesome.min.css" rel="stylesheet"
-	type="text/css">
+<link href="/TSDN_Application/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 
 <link href='/TSDN_Application/css/fullcalendar.css' rel='stylesheet' />
-<link href='/TSDN_Application/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+<link href='/TSDN_Application/css/fullcalendar.print.css'
+	rel='stylesheet' media='print' />
 <script src='/TSDN_Application/js/moment.min.js'></script>
 <script src='/TSDN_Application/js/excanvas.js'></script>
 <script src='/TSDN_Application/js/fullcalendar.min.js'></script>
@@ -65,137 +69,153 @@ body {
 	margin: 0 auto;
 }
 
-#mytable{
-	width:100%;
-	height:280px;	
-	font-size:16px;
-	font-weight:bold;
+#mytable {
+	width: 100%;
+	height: 280px;
+	font-size: 16px;
+	font-weight: bold;
 }
-	
-#mytable td{
+
+#mytable td {
 	/*border:10px;*/
-	padding:5px;
+	padding: 5px;
 	/*margin:10px ;*/
 }
 
-#mytable{ 
-	background:#0xfff;
+#mytable {
+	background: #0xfff;
 }
 
-table, td, th  {
-  border-collapse:collapse;
-  border:1px solid;
+table, td, th {
+	border-collapse: collapse;
+	border: 1px solid;
 }
-select option{
-	background-color:#6687a6;
+
+select option {
+	background-color: #6687a6;
 }
-input,select,.tran,.areatext,.more{
-	background-color:transparent;
-	border:1;
+
+input, select, .tran, .areatext, .more {
+	background-color: transparent;
+	border: 1;
 	/*height:100%;*/
 }
 /*input[type="submit"],
 input[type="reset"],*/
-input[type="button"]{
-	height:20px;
-	width:80; 
-	border:1;
-	background-color:rgba(255,255,255,0.5);
-	color:#000000;
+input[type="button"] {
+	height: 20px;
+	width: 80;
+	border: 1;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #000000;
 }
 
-.ok{
-	width:48%; 
-	height:30px;
-	float:left;
-	background:#a2a2a2;
+.ok {
+	width: 48%;
+	height: 30px;
+	float: left;
+	background: #a2a2a2;
 	/*background-color:rgba(42,42,42,0.8);*/
-	background-color:rgba(255,255,255,0.5);
-	color:#000000;
-	font-size:16px;
-	margin-top:2;
-	padding:2; 
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #000000;
+	font-size: 16px;
+	margin-top: 2;
+	padding: 2;
 }
-#mytable{ 
-	background:#0xfff;
+
+#mytable {
+	background: #0xfff;
 }
-.hide{
-	display:none 
+
+.hide {
+	display: none
 }
-.progress{
+
+.progress {
 	z-index: 2000;
-	float:right; 
-	position: relative; 
-	left: 40%;  
-	top: 40%;  	
+	float: right;
+	position: relative;
+	left: 40%;
+	top: 40%;
 }
-.mask{position: fixed;top: 0;right: 0;bottom: 0;left: 0; z-index: 1000; background-color: #000000}
-.popWindow{
-			color:black;
-			float:right; 
-			position: absolute; 
-			left: 40%;  
-			top: 40%;  
-			width:300px; 
-			height:110px;
-			background:#FFFFFF;
-			color:#000000;
-			z-index: 1001;
- } 
- 
- .img{
-	width:200px; 
-	height:100px;
-	float:left; 
+
+.mask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: #000000
+}
+
+.popWindow {
+	color: black;
+	float: right;
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	width: 300px;
+	height: 110px;
+	background: #FFFFFF;
+	color: #000000;
+	z-index: 1001;
+}
+
+.img {
+	width: 200px;
+	height: 100px;
+	float: left;
 	/*background:url('images/line.png');/*/
-	margin-top:10%;
-	margin-left:10%;
+	margin-top: 10%;
+	margin-left: 10%;
 	/*border: 10 80;*/
 }
-.cancel{
-	width:48%; 
-	height:30px;
-	float:right;
-	background:#a2a2a2;
-	background-color:rgba(255,255,255,0.5);
-	color:#000000;
-	font-size:16px;
-	margin-top:2;
-	padding:2; 
+
+.cancel {
+	width: 48%;
+	height: 30px;
+	float: right;
+	background: #a2a2a2;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #000000;
+	font-size: 16px;
+	margin-top: 2;
+	padding: 2;
 }
-.more{
-	width:100%;
-	height:16px;
-	writing-mode：lr-tb;
+
+.more {
+	width: 100%;
+	height: 16px; writing-mode：lr-tb;
 	background: #656567;;
-    /* height: 100%; */
+	/* height: 100%; */
 	/*background:#0500ff;*/
-	border:1px;
+	border: 1px;
 	/*color:#fff;*/
-	background-image:url('images/accordion_collapse.png');/* no-repeat ;-16px 0;*/
-	background-repeat:no-repeat;
+	background-image: url('images/accordion_collapse.png');
+	/* no-repeat ;-16px 0;*/
+	background-repeat: no-repeat;
 	text-align: center;
 	/*margin:auto  ;*/
-	background-position:center 0;/*center center;*/
-
+	background-position: center 0; /*center center;*/
 }
-.more1{
-	width:100%;
-	height:16px;
-	writing-mode：lr-tb;
-	background:#0500ff;
-	border:1px;
-	color:#fff;
-	background:url('../images/layout_arrows.png') no-repeat -16px -16px;
-	background-repeat:no-repeat;
+
+.more1 {
+	width: 100%;
+	height: 16px; writing-mode：lr-tb;
+	background: #0500ff;
+	border: 1px;
+	color: #fff;
+	background: url('../images/layout_arrows.png') no-repeat -16px -16px;
+	background-repeat: no-repeat;
 	text-align: center;
 	/*margin:auto  ;*/
 	/*background-position:center 0;center center;*/
-
 }
 </style>
 
-	<link rel="stylesheet" type="text/css" href="/TSDN_Application/css/jquery.fancybox.css?v=2.1.5" media="screen" />
+<link rel="stylesheet" type="text/css"
+	href="/TSDN_Application/css/jquery.fancybox.css?v=2.1.5" media="screen" />
 </head>
 <script type="text/javascript">
 	function refresh(url) {
@@ -228,7 +248,75 @@ input[type="button"]{
 			startQuery(url);
 			onResize();
 		}
-
+		var uuid="";
+function test(){
+			var tableElement = document.getElementById("bustable");
+	
+			var size = tableElement.rows.length;
+			alert(size);
+			var index = 0;
+			var selectnumber = 0;
+			for (var i = 1; i < size; i++) {
+				var checkbox = tableElement.rows[i].cells[8].firstChild;
+				if (checkbox.checked == true) {
+					index = i;
+					uuid = checkbox.value ;
+					selectnumber++;
+				}
+			}
+			
+			if (selectnumber == 0 || selectnumber > 1) {
+				$.fancybox.open('<div style=margin-top:30%><p>Please select only one service.</p></div>');
+				return;
+				
+			}	
+			
+			if ((uuid == null) || (uuid == "")) {
+				$.fancybox.open('<div style=margin-top:30%><p>Please select one service.</p></div>');
+				return;
+			}
+			var name = tableElement.rows[index].cells[1].innerHTML; 
+			var srcnode = tableElement.rows[index].cells[2].innerHTML;
+			var srcport = tableElement.rows[index].cells[3].innerHTML;
+			var sinknode = tableElement.rows[index].cells[4].innerHTML;
+			var sinkport = tableElement.rows[index].cells[5].innerHTML;
+			var bw = tableElement.rows[index].cells[6].innerHTML;
+			var sla = tableElement.rows[index].cells[7].innerHTML; 
+			for(var i=0;i<document.getElementById("ingress").options.length;i++){
+				if(srcnode==document.getElementById("ingress").options[i].innerHTML){
+					document.getElementById("ingress").options[i].selected = true;
+					break;
+				}
+			}
+			for(var i=0;i<document.getElementById("srcPort").options.length;i++){
+				if(srcport==document.getElementById("srcPort").options[i].value){
+					document.getElementById("srcPort").options[i].selected = true;
+					break;
+				}
+			}
+			for(var i=0;i<document.getElementById("egress").options.length;i++){
+				if(sinknode==document.getElementById("egress").options[i].innerHTML){
+					document.getElementById("egress").options[i].selected = true;
+					break;
+				}
+			}
+			for(var i=0;i<document.getElementById("distPort").options.length;i++){
+				if(sinkport==document.getElementById("distPort").options[i].value){
+					document.getElementById("distPort").options[i].selected = true;
+					break;
+				}
+			}
+			for(var i=0;i<document.getElementById("serviceType").options.length;i++){
+				if(sla==document.getElementById("serviceType").options[i].value){
+					document.getElementById("serviceType").options[i].selected = true;
+					break;
+				}
+			}
+	document.getElementById("serviceName").value=name;
+	document.getElementById("bandWidth").value=bw;
+	var data = document.getElementById("inline1");
+		$.fancybox.open(data);
+	}
 		//modify node port by node neId
 		function selectchange(value, id) {
 			
@@ -277,9 +365,7 @@ input[type="button"]{
 				}
 			}
 		}
-		function test(){
-		self.location='bod_view.action'; 
-		}
+
 		
 		
 		function shouLoaderProgress() {
@@ -371,7 +457,7 @@ input[type="button"]{
 				"serviceData.serviceType" : $("#serviceType").val()
 			}, function(data) {
 				
-				 $.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div>');
+				 $.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button onclick=bod_config.action>Back</button>');
 				
 				
 			});
@@ -383,44 +469,16 @@ input[type="button"]{
 		
 		function modifyEthService()
 		{
-			shouLoaderProgress();
- 
-            var tableElement = document.getElementById("bustable");
-			var size = tableElement.rows.length;
-			var index = 0;
-			var uuid ="";
-			var selectnumber = 0;
-			for (var i = 1; i < size; i++) {
-				var checkbox = tableElement.rows[i].cells[8].firstChild;
-				if (checkbox.checked == true) {
-					index = i;
-					uuid = checkbox.value ;
-					selectnumber++;
-				}
-			}
-			
-			if (selectnumber == 0 || selectnumber > 1) {
-				showResultInfo("Please select only one service.");
-				return;
-			}	
-			
-			if ((uuid == null) || (uuid == "")) {
-				showResultInfo("Please select one service.");
-                return;
-			}
-			var name = tableElement.rows[index].cells[1].firstChild.value; 
-			var bw = tableElement.rows[index].cells[6].firstChild.value;
-			
-			var sla = tableElement.rows[index].cells[7].firstChild.value; 
-			shouLoaderProgress();
+			alert("type--->"+$("#serviceType").val());
 			$.post("eth_modifyTunnel.action", {
 				httpAddr : $("#httpAddr").val(),
 				"serviceData.serviceName" : $("#serviceName").val(),
-				"serviceData.serviceType" : $("#serviceType").attr("value"),
+				"serviceData.serviceType" : $("#serviceType").val(),
 				"serviceData.uuid" : uuid,
 				"serviceData.bandWidth" : $("#bandWidth").val()
 			}, function(data) {
-				showResultInfo(data);
+				$.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button onclick=bod_config.action>Back</button>');
+				uuid="";
 			});
 		}
 		
@@ -431,7 +489,7 @@ input[type="button"]{
 			var tableElement = document.getElementById("bustable");
 			var size = tableElement.rows.length;
 			if (size <= 1) {
-				showResultInfo("Please select service.");
+				$.fancybox.open('<div style=margin-top:30%><p>Please select service.</p></div><button onclick=bod_config.action>Back</button>');
 				return;
 			}			
 			
@@ -449,7 +507,7 @@ input[type="button"]{
 			}
 			
 			if ((selectArrText == null) || (selectArrText == "")) {
-				showResultInfo("Please select service.");
+				$.fancybox.open('<div style=margin-top:30%><p>Please select service.</p></div><button onclick=bod_config.action>Back</button>');
                 return;
 			}
 
@@ -457,8 +515,8 @@ input[type="button"]{
 				httpAddr : $("#httpAddr").val(),
 				selectServiceString : selectArrText
 			}, function(data) {
-				showResultInfo(data);
-				return;
+				$.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button onclick=bod_config.action>Back</button>');
+				self.location = 'bod_config.action';
 			});
 		}
 		
@@ -854,29 +912,21 @@ input[type="button"]{
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
-					<li><a href="ethSummary.action"><i class="fa fa-fw fa-dashboard"></i>
-							Dashboard</a></li>
-					<li class="active">
-                        <a href="javascript:;"  data-toggle="collapse"
-						data-target="#demo"><i class="fa fa-fw fa-caret-down"></i> Topo</a>
-                        <ul id="demo" class="collapse in">
-                            <li>
-                                <a class="fancybox" href="#inline1">Create Tunnel</a>
-                            </li>
-                            <li>
-                                <a href="#">Query Tunnel</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-					<li><a href="jsp/event.jsp"><i class="fa fa-fw fa-table"></i>
-							Tables</a></li>
-					<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-							Forms</a></li>
-					<li><a href="bootstrap-elements.html"><i
-							class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
-					<li><a href="bootstrap-grid.html"><i
-							class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a></li>
+					<li><a href="ethSummary.action"><i
+							class="fa fa-fw fa-dashboard"></i> Calendar</a></li>
+					<li class="active"><a href="javascript:;"
+						data-toggle="collapse" data-target="#demo"><i
+							class="fa fa-fw fa-caret-down"></i> Topo</a>
+						<ul id="demo" class="collapse in">
+							<li><a class="fancybox" href="#inline1">Create Tunnel</a></li>
+							<li><a href="#">Query OCH(Detail)</a></li>
+							<li><a href="#">Query OTN(Detail)</a></li>
+							<li><a href="#">Query Nodes</a></li>
+						</ul></li>
+					<li><a href="#"><i class="fa fa-fw fa-table"></i> Tables</a></li>
+					<li><a href="#"><i class="fa fa-fw fa-edit"></i> Forms</a></li>
+					<li><a href="#"><i class="fa fa-fw fa-desktop"></i> Chart</a></li>
+					<li><a href="#"><i class="fa fa-fw fa-wrench"></i> Tools</a></li>
 					<li><a href="javascript:;" data-toggle="collapse"
 						data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>
 							Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
@@ -884,10 +934,6 @@ input[type="button"]{
 							<li><a href="#">Dropdown Item</a></li>
 							<li><a href="#">Dropdown Item</a></li>
 						</ul></li>
-					<li><a href="blank-page.html"><i class="fa fa-fw fa-file"></i>
-							Blank Page</a></li>
-					<li><a href="index-rtl.html"><i
-							class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -898,10 +944,10 @@ input[type="button"]{
 				<div>
 					<h2 id="titleh2" style="color:white">T-SDN BoD</h2>
 				</div>
-				<div id="left"  style="width:100%;float:left">
+				<div id="left" style="width:100%;float:left">
 					<canvas id="myCanvas" style="width:100%;" height="500px"></canvas>
 				</div>
-				
+
 				<div id="nav1">
 					<button id="more" class="more" type="button" onclick="clickMore();">
 					</button>
@@ -909,12 +955,14 @@ input[type="button"]{
 						<div style="text-align: center; height: 24px;">
 							Packet BOD Service
 							<div style="text-align: right; margin-top: -18px; height: 24px;">
-								<input type="button" id="refresh" class="all" onclick='refresh("ethSummary.action");' value="Refresh" /> 
-								<input type="button" id="all" class="all" onclick="checkAll();" value="Select All" /> 
-								<input type="button" class="invert" onclick="invert();" value="Deselect" /> 
-								<input type="button" class="delete" onclick="deleteEthService();" value="Delete" />
+								<input type="button" id="refresh" class="all"
+									onclick='refresh("bod_config.action");' value="Refresh" /> <input
+									type="button" id="all" class="all" onclick="checkAll();"
+									value="Select All" /> <input type="button" class="invert"
+									onclick="invert();" value="Deselect" /> <input type="button"
+									class="delete" onclick="deleteEthService();" value="Delete" />
 								<!--@TODO  remove the comment , to active the function of modify tunnel  -->
-								<!-- <input type="button" class="all" onclick="modifyEthService();" value="Modify" />  -->
+								<input type="button" class="all" onclick="test()" value="Modify"/>
 							</div>
 						</div>
 						<div id="divtable" style="overflow: auto;">
@@ -943,7 +991,9 @@ input[type="button"]{
 										<td>${ethTunnel.distTunnelPoint.portIdStr}</td>
 										<td>${ethTunnel.bandWidth}</td>
 										<td>${ethTunnel.sla==1?"Diamond":(ethTunnel.sla==2?"Silver":"Copper")}</td>
-										<td><input type="checkbox" id="ethServiceCheck" value="${ethTunnel.uuid}" onclick="writeToBodForm(${ethTunnel.uuid});" /></td>
+										<td><input type="checkbox" id="ethServiceCheck"
+											value="${ethTunnel.uuid}"
+											onclick="writeToBodForm(${ethTunnel.uuid});" /></td>
 									</tr>
 								</c:forEach>
 							</table>
@@ -958,10 +1008,14 @@ input[type="button"]{
 						style="left: 80px; font-size: 18px; color: black; width: 200px; height: 50px; position: absolute; top: 15%;"></div>
 					<div
 						style="width: 100%; height: 40px; bottom: 0; position: absolute; background: #C0D9D9"></div>
-					<input type="button" value="ok" style="width: 20%; height: 30px; position: absolute; right: 3; bottom: 3%;'%" onclick="quitPopWindow()" />
+					<input type="button" value="ok"
+						style="width: 20%; height: 30px; position: absolute; right: 3; bottom: 3%;'%"
+						onclick="quitPopWindow()" />
 				</div>
 				<div class="progress">
-					<i><img id="progressImgage" class="progress hide" width="100px" height="100px" alt="" src="/TSDN_Application/images/ajax_loader.gif" /></i>
+					<i><img id="progressImgage" class="progress hide" width="100px"
+						height="100px" alt=""
+						src="/TSDN_Application/images/ajax_loader.gif" /></i>
 				</div>
 				<div id="maskOfProgressImage" class="mask hide"></div>
 			</div>
@@ -973,72 +1027,75 @@ input[type="button"]{
 	</div>
 
 	<div id="inline1" style="width:400px;display: none;">
-		<form name="bodForm" method="post" action="eth_createTunnel.action" onsubmit="return checkForm();">
+		<form name="bodForm" method="post" action="eth_createTunnel.action"
+			onsubmit="return checkForm();">
 
-						<table id="mytable">
-							<tr>
-								<td>SNC-T IP</td>
-								<td><input type="text" name="httpAddr" id="httpAddr"
-									style="width:100%"  value="<%=http%>"></td>
-							</tr>
-							<tr>
-								<td width="40%">Service Name</td>
-								<td width="60%"><input type="text" name="serviceName"
-									id="serviceName" style="width: 100%" value="BoD_Eth_Service"></input></td>
-							</tr>
-							<tr>
-								<td>Source Node</td>
+			<table id="mytable">
+				<tr>
+					<td>SNC-T IP</td>
+					<td><input type="text" name="httpAddr" id="httpAddr"
+						style="width:100%" value="<%=http%>"></td>
+				</tr>
+				<tr>
+					<td width="40%">Service Name</td>
+					<td width="60%"><input type="text" name="serviceName"
+						id="serviceName" style="width: 100%" value="BoD_Eth_Service"></input></td>
+				</tr>
+				<tr>
+					<td>Source Node</td>
 
-								<td><select name="ingress" id="ingress" style="width: 100%"
-									onchange="selectchange(document.getElementById('ingress').value,'srcPort');">
-								</select></td>
-							</tr>
-							<tr>
-								<td>Source Port</td>
-								<td><select name="srcPort" id="srcPort" style="width: 100%"></select>
-								</td>
-							</tr>
-							<tr>
-								<td>Sink Node</td>
+					<td><select name="ingress" id="ingress" style="width: 100%"
+						onchange="selectchange(document.getElementById('ingress').value,'srcPort');">
+					</select></td>
+				</tr>
+				<tr>
+					<td>Source Port</td>
+					<td><select name="srcPort" id="srcPort" style="width: 100%"></select>
+					</td>
+				</tr>
+				<tr>
+					<td>Sink Node</td>
 
-								<td><select name="egress" style="width: 100%" id="egress"
-									onchange="selectchange(document.getElementById('egress').value,'distPort');">
+					<td><select name="egress" style="width: 100%" id="egress"
+						onchange="selectchange(document.getElementById('egress').value,'distPort');">
 
-								</select></td>
+					</select></td>
 
-							</tr>
-							<tr>
-								<td>Sink Port</td>
-								<td><select name="distPort" id="distPort"
-									style="width: 100%"></select></td>
-							</tr>
-							<tr>
-								<td>Bandwidth(Mbps)</td>
-								<td><input type="text" name="bandWidth" id="bandWidth"
-									value="100" style="width: 100%"></input></td>
-							</tr>
-							<tr>
-								<td>SLA</td>
-								<td><select name="serviceType" id="serviceType"
-									style="width: 100%">
-										<option value="3">Copper</option>
-										<option value="2">Silver</option>
-										<option value="1">Diamond</option>
-								</select></td>
-							</tr>
-						</table>
+				</tr>
+				<tr>
+					<td>Sink Port</td>
+					<td><select name="distPort" id="distPort" style="width: 100%"></select></td>
+				</tr>
+				<tr>
+					<td>Bandwidth(Mbps)</td>
+					<td><input type="text" name="bandWidth" id="bandWidth"
+						value="100" style="width: 100%"></input></td>
+				</tr>
+				<tr>
+					<td>SLA</td>
+					<td><select name="serviceType" id="serviceType"
+						style="width: 100%">
+							<option value="3">Copper</option>
+							<option value="2">Silver</option>
+							<option value="1">Diamond</option>
+					</select></td>
+				</tr>
+			</table>
 
 
-						<input type="button" class="ok" value="CreateEthService" style="width: 50%; height: 30px;" onclick="createEthService()" />
+			<input type="button" class="ok" value="CreateEthService"
+				style="width: 50%; height: 30px;" onclick="createEthService()" />
 
-						<!-- @TODO modify yuehuaming -->
-						<input type="button" class="ok" value="QueryEthService" style="width: 50%; height: 30px;" onclick="refresh('ethSummary.action');" />
+			<!-- @TODO modify yuehuaming -->
+			<input type="button" class="ok" value="ModifyEthService"
+				style="width: 50%; height: 30px;"
+				onclick="modifyEthService();" />
 
-						<!-- input
+			<!-- input
 				type="reset" class="cancel" value="Cancel" /-->
-					</form>
+		</form>
 	</div>
-<div id="data" class="fancybox" ></div>
+	<div id="data" class="fancybox"></div>
 </body>
 
 

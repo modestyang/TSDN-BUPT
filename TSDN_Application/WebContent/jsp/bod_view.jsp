@@ -178,42 +178,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						data-target="#menu"><i class="fa fa-fw fa-caret-down"></i> Topo</a>
                         <ul id="menu" class="collapse">
                             <li>
-                                <a href="#">Create Tunnel</a>
+                                <a class="fancybox" href="#inline1">Create Tunnel</a>
                             </li>
                             <li>
-                                <a href="#">Query Tunnel</a>
+                                <a href="#">Query OCH(Detail)</a>
+                            </li>
+                            <li>
+                                <a href="#">Query OTN(Detail)</a>
+                            </li>
+                            <li>
+                                <a href="#">Query Nodes</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="createTunnelByCalendar.action?a=1"><i class="fa fa-fw fa-table"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                     <li><a href="#"><i class="fa fa-fw fa-table"></i>
+							Tables</a></li>
+					<li><a href="#"><i class="fa fa-fw fa-edit"></i>
+							Forms</a></li>
+					<li><a href="#"><i
+							class="fa fa-fw fa-desktop"></i> Chart</a></li>
+					<li><a href="#"><i
+							class="fa fa-fw fa-wrench"></i> Tools</a></li>
+					<li><a href="javascript:;" data-toggle="collapse"
+						data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>
+							Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+						<ul id="demo" class="collapse">
+							<li><a href="#">Dropdown Item</a></li>
+							<li><a href="#">Dropdown Item</a></li>
+						</ul>
+					</li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -270,7 +263,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					'hideOnContentClick' :   true,
     				'autoScale'          :   true,
 					'type':'ajax',
-					'href':'dayclick.action?flag=0'  //flag 0 表示查看日程  1表示添加日程
+					'href':'dayclick.action?start=0'  //flag 0 表示查看日程  1表示添加日程
 					
 				});
 	    	}

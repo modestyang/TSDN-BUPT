@@ -140,7 +140,26 @@ public class EthServiceProc {
 		
 		return (responseStr != null);
 	}
-
+	 /*
+	 * @description process the modify request
+	 * @param httpAddress
+	 * @param serviceData
+	 * @throws TsdnException
+	 */
+	public void  modifyEthTunnel(String httpAddress, ServiceDataStruct serviceData) throws TsdnException{
+	EthTunnel entity = EthServiceTool.translateEditServiceData(serviceData);
+	ObjectNode jsonNode = jsonBuildutil.encodeModifyTunnelJson(entity);
+	if(jsonNode == null){
+	throw new TsdnException(ErrorType.BODY_FORMAT_FAILED);
+	}
+	String body = jsonNode.toString();
+	String uuid = serviceData.getUuid();
+	String url = String.format("%s/netdata/ethsrvs/%s/%s.json", httpAddress, ETH_URL_VERSION, uuid);
+	// write log begin
+	restLog.beginPut(serviceData, url, body);
+	tsdn.proc(HTTP_REQUEST_PUT, url, body);
+	restLog.end();
+	}
 	/**
 	 * process the delete request
 	 * 
