@@ -457,7 +457,7 @@ function test(){
 				"serviceData.serviceType" : $("#serviceType").val()
 			}, function(data) {
 				
-				 $.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button onclick=bod_config.action>Back</button>');
+				 $.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button href=bod_config.action style=margin-left:50px>Back</button>');
 				
 				
 			});
@@ -477,7 +477,7 @@ function test(){
 				"serviceData.uuid" : uuid,
 				"serviceData.bandWidth" : $("#bandWidth").val()
 			}, function(data) {
-				$.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button onclick=bod_config.action>Back</button>');
+				$.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button href=bod_config.action style=margin-left:50px>Back</button>');
 				uuid="";
 			});
 		}
@@ -489,7 +489,7 @@ function test(){
 			var tableElement = document.getElementById("bustable");
 			var size = tableElement.rows.length;
 			if (size <= 1) {
-				$.fancybox.open('<div style=margin-top:30%><p>Please select service.</p></div><button onclick=bod_config.action>Back</button>');
+				$.fancybox.open('<div style=margin-top:30%><p>Please select service.</p></div><button href=bod_config.action style=margin-left:50px>Back</button>');
 				return;
 			}			
 			
@@ -507,7 +507,7 @@ function test(){
 			}
 			
 			if ((selectArrText == null) || (selectArrText == "")) {
-				$.fancybox.open('<div style=margin-top:30%><p>Please select service.</p></div><button onclick=bod_config.action>Back</button>');
+				$.fancybox.open('<div style=margin-top:30%><p>Please select service.</p></div><button href=bod_config.action style=margin-left:50px>Back</button>');
                 return;
 			}
 
@@ -515,7 +515,7 @@ function test(){
 				httpAddr : $("#httpAddr").val(),
 				selectServiceString : selectArrText
 			}, function(data) {
-				$.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button onclick=bod_config.action>Back</button>');
+				$.fancybox.open('<div style=margin-top:30%><p>'+data+'</p></div><button href=bod_config.action style=margin-left:50px>Back</button>');
 				self.location = 'bod_config.action';
 			});
 		}
